@@ -1,0 +1,11 @@
+<h1>Recipes</h1>
+
+<%= button_to "Sort by ingredient total", recipes_path, method: :get, name: :sort %>
+
+<% @recipes.each do |r| %>
+    <ul>
+        <li><%= link_to r.name, recipe_path(r) %></li>
+    </ul>
+<% end %>
+
+<%= button_to "New Recipe", new_recipe_path, method: :get %>
